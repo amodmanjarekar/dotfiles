@@ -1,0 +1,25 @@
+*
+
+!.gitignore
+
+!.config/
+
+# Hypr
+!.config/hypr
+
+# Eww
+!.config/eww
+
+# ironbar
+!.config/ironbar
+
+# mako
+!.config/mako
+
+# swww
+!.config/swww
+
+# waybar
+!.config/waybar
+
+

@@ -1,0 +1,91 @@
+// -*- mode: jsonc -*-
+
+{
+    "layer": "top",
+    "width": "90%",
+    "spacing": 4,
+
+    "modules-left": [ "hyprland/workspaces" ],
+    "modules-center": [ "clock" ],
+    "modules-right": [ "group/grp-hardware", "battery", "group/grp-power"],
+
+    "clock": {
+        "interval": 60,
+        "format": "  {:%H:%M (%Z)}",
+        "format-alt": "{:%A, %d %b %Y}",
+        "tooltip": false,
+        "timezones": ["", "Asia/Tokyo"],
+        "actions": {
+            "on-scroll-up": "tz_up",
+            "on-scroll-down": "tz_down"
+        }
+    },
+
+    "group/grp-hardware": {
+        "orientation": "horizontal",
+        "modules": ["cpu", "memory", "temperature", "disk"],
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": "{}% ",
+        "max-length": 10
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "{}% ",
+        "max-length": 10
+    },
+
+    "disk": {
+        "interval": 180,
+        "format": "{free} free ",
+        "path": "/"
+    },
+
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "max-length": 25
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""],
+        "tooltip": false,
+    },
+
+    "group/grp-power": {
+        "orientation": "horizontal",
+        "modules": [ "custom/lock", "custom/power", "custom/reboot" ],
+        "drawer": {
+            "transition-left-to-right": false,
+            "children-class": "power-children"
+        }
+    },
+    
+    "custom/lock": {
+        "format" : "",
+        "tooltip": false,
+        "on-click": "systemctl suspend",
+    },
+    "custom/reboot": {
+        "format" : "",
+        "tooltip": false,
+        "on-click": "reboot",
+    },
+    "custom/power": {
+        "format" : "",
+        "tooltip": false,
+        "on-click": "shutdown now",
+    }
+}

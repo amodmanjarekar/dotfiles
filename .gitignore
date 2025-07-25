@@ -6,20 +6,26 @@
 
 # Hypr
 !.config/hypr
+!.config/hypr/*
 
 # Eww
 !.config/eww
+!.config/eww/*
 
 # ironbar
 !.config/ironbar
+!.config/ironbar/*
 
 # mako
 !.config/mako
+!.config/mako/*
 
 # swww
 !.config/swww
+!.config/swww/*
 
 # waybar
 !.config/waybar
+!.config/waybar/*
 
 
